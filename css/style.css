@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    min-width: 20rem;
+    min-height: 20rem;
+    color:#555F61;
+}
+
+#status-box {
+    max-width: 20rem; 
+    min-height: 20rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightcoral;
+}
+
+#status {
+  margin: 0;
+  width: 80%;
+  text-align: center;
+}
+
+#result-box {
+  padding: 0 2rem;
+  max-width: 20rem;
+}
+
+.type {
+  color: cornflowerblue;
+}
+
+#rating h2 {
+  margin-bottom: -1rem;
+}
+.star:before {
+  content: "\0022c6";
+  font-size: 4rem;
+}
+.star-empty:before {
+  color: gray;
+}
+.star-full:before {
+  color: gold;
+}
+
+#suggestions h2 {
+  margin-top: 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-color: cornflowerblue;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

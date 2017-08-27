@@ -1,0 +1,8 @@
+<template>
+    <div if.bind="improvements" id="suggestions">
+        <h2>Improve this bug report by adding:</h2>
+        <ul>
+            <li repeat.for="item of improvements">${item}</li>
+        </ul>
+    </div>
+</template>

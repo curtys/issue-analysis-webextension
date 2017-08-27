@@ -1,0 +1,20 @@
+<template>
+  <require from="./components/rating"></require>
+  <require from="./components/suggestions"></require>
+  <require from="./components/spinner.html"></require>
+  <spinner if.bind="waiting"></spinner>
+  <div id="content">
+    <div if.bind="status" id="status-box">
+      <h1 id="status">${status}</h1>
+    </div>
+    <div if.bind="!status && result" id="result-box">
+      <h1>Issue type: <span class="type">${result.issueType}</span></h1>
+      <h2 if.bind="!isBug">This issue may describe an improvement, 
+        a feature request or some other task.</h2>
+      <div if.bind="isBug">
+        <rating score.bind="result.quality"></rating>
+        <suggestions improvements.bind="result.improvements"></suggestions>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,37 @@
+{
+
+    "manifest_version": 2,
+    "name": "Issue Analysis",
+    "version": "1.0",
+
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": "assets/star.png",
+        "default_title": "Analyse issue",
+        "default_popup": "popup.html"
+    },
+
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs", "<all_urls>",
+        "storage"
+    ],
+
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["scripts/content-script.js"]
+    }],
+
+    "applications": {
+        "gecko": {
+          "id": "addon@example.com",
+          "strict_min_version": "42.0"
+        }
+      }
+
+}

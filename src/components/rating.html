@@ -1,0 +1,7 @@
+<template>
+    <require from="./star"></require>
+    <div id="rating">
+        <h2>Report quality:</h2>
+        <star repeat.for="s of stars" full.bind="s.full"></star>
+    </div>
+</template>
