@@ -4,7 +4,7 @@
   <require from="./components/spinner.html"></require>
   <spinner if.bind="waiting"></spinner>
   <div id="content">
-    <div if.bind="status" id="status-box">
+    <div if.bind="status && !result" id="status-box">
       <h1 id="status">${status}</h1>
     </div>
     <div if.bind="!status && result" id="result-box">

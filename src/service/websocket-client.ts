@@ -52,7 +52,9 @@ export class WebsocketClient {
     }
 
     private handleClosedConnection(event: CloseEvent) {
-        this.ea.publish('wsclose', event.eventPhase);
+        if (this.connected) {
+            this.ea.publish('wsclose', event.eventPhase);
+        }
     }
 
 }

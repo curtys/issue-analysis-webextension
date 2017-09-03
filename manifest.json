@@ -1,5 +1,4 @@
 {
-
     "manifest_version": 2,
     "name": "Issue Analysis",
     "version": "1.0",
@@ -13,7 +12,8 @@
 
     "options_ui": {
         "page": "options.html",
-        "browser_style": true
+        "browser_style": true,
+        "chrome_style": true
     },
 
     "permissions": [
@@ -24,7 +24,10 @@
 
     "content_scripts": [{
         "matches": ["<all_urls>"],
-        "js": ["scripts/content-script.js"]
+        "js": [
+            "scripts/browser-polyfill.min.js",
+            "scripts/content-script.js"
+        ]
     }],
 
     "applications": {
@@ -33,5 +36,4 @@
           "strict_min_version": "42.0"
         }
       }
-
 }

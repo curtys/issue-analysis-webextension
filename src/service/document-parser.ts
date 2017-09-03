@@ -25,7 +25,6 @@ export class DocumentParser {
         // attachments
         issue.hasPatch = this.hasPatchAttachment(document);
         issue.hasScreenshot = this.hasScreenshotAttachment(document);
-        console.log(issue.hasScreenshot);
 
         return issue;
     }

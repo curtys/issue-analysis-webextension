@@ -13,7 +13,7 @@ export class App {
     private ea: EventAggregator;
     private subscriptions: Array<Subscription> = [];
     private websocket: WebsocketClient;
-    private serverUrl: string = 'ws://0.0.0.0:4567/service';
+    private serverUrl: string = 'ws://issueanalysis.azurewebsites.net/service';
     private subject: Document;
     private issue: Issue;
     private isBug: boolean = false;
@@ -107,6 +107,7 @@ export class App {
     }
 
     private checkServiceUrl(url: string): boolean {
+        if (!url) return false;
         return url.startsWith('ws://');
     }
 

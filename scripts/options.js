@@ -8,14 +8,13 @@ function saveOptions(e) {
 }
 
 function restoreOptions() {
-    var gettingItem = browser.storage.sync.get('wsurl');
-    gettingItem.then((res) => {
-        document.querySelector("#url").value = res.wsurl || 'ws://0.0.0.0:4567/service';
+    browser.storage.sync.get('wsurl').then((res) => {
+        document.querySelector("#url").value = res.wsurl || 'ws://issueanalysis.azurewebsites.net/service';
     });
 }
 
 function setToDefault() {
-    document.querySelector("#url").value = 'ws://0.0.0.0:4567/service';
+    document.querySelector("#url").value = 'ws://issueanalysis.azurewebsites.net/service';
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
