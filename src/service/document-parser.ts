@@ -42,7 +42,7 @@ export class DocumentParser {
         let nodes: NodeListOf<Element> = null;
         selectors.find(selector => {
             nodes = document.querySelectorAll(selector);
-            return !!(nodes);
+            return !!(nodes && nodes.length > 0);
         });
         return nodes;
     }
@@ -90,7 +90,7 @@ export class DocumentParser {
 
     private static getComments(document: Document): Array<Comment> {
         let selectors = ['.activity-comment .action-body',
-            'bz_comment_table .bz_comment:not(.bz_first_comment) .bz_comment_text'];
+            '.bz_comment:not(.bz_first_comment) .bz_comment_text'];
         let comments: Array<Comment> = [];
         let commentNodes = this.getElements(document, selectors);
         if (commentNodes) {

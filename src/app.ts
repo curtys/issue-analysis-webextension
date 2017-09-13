@@ -42,6 +42,7 @@ export class App {
         if (subjectPageXML) {
             this.subject = this.parseToDom(subjectPageXML);
             this.issue = DocumentParser.parseToIssue(this.subject);
+            console.log('issue', this.issue);
             if (!this.issue.isValid()) {
                 this.error(this.errorUnsupported);
                 return;
