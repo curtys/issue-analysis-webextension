@@ -111,7 +111,9 @@ export class DocumentParser {
             for (let i = 0; i < nodes.length; i++) {
                 let element = nodes.item(i);
                 let text = this.getTextContent(element);
-                if (text.endsWith('.patch')) return true;
+                if (text.endsWith('.patch') || text.endsWith('.diff')) {
+                    return true;
+                }
             }
         }
         selectors = ['.bz_patch'];
