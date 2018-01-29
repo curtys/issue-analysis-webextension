@@ -9,12 +9,12 @@ function saveOptions(e) {
 
 function restoreOptions() {
     browser.storage.sync.get('wsurl').then((res) => {
-        document.querySelector("#url").value = res.wsurl || 'ws://issueanalysis.azurewebsites.net/service';
+        document.querySelector("#url").value = res.wsurl || 'ws://localhost:4567/service';
     });
 }
 
 function setToDefault() {
-    document.querySelector("#url").value = 'ws://issueanalysis.azurewebsites.net/service';
+    document.querySelector("#url").value = 'ws://localhost:4567/service';
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
